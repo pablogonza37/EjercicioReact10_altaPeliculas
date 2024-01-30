@@ -1,5 +1,6 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import ListaPeliculas from "./ListaPeliculas";
 
 const FormularioAltaPeliculas = () => {
   return (
@@ -32,6 +33,7 @@ const FormularioAltaPeliculas = () => {
           </Button>
         </div>
       </Form>
+      <ListaPeliculas></ListaPeliculas>
     </section>
   );
 };

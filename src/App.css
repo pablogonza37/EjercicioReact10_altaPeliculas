@@ -29,6 +29,13 @@ body {
   border-radius: 10px;
 }
 
+.card-img-top{
+  
+	height: 200px;
+	object-fit: cover;
+	border: 3px solid #ff9daa;
+}
+
 @media (min-width: 1200px) {
   .form {
     margin: 0 250px;
