@@ -2,7 +2,7 @@ import { Card, Button } from "react-bootstrap";
 import ListGroup from 'react-bootstrap/ListGroup';
 
 
-const PeliculaGuardada = ( { pelicula }) => {
+const PeliculaGuardada = ( { pelicula, borrarPelicula }) => {
   return (
     <Card className="shadow-lg p-3 mb-5 text-bg-dark rounded">
       <Card.Img variant="top" src="./src/asset/imagen_pelicula.webp"/>
@@ -15,7 +15,8 @@ const PeliculaGuardada = ( { pelicula }) => {
           Genero: {pelicula.genero}
         </Card.Text>
         <div className="text-end">
-          <Button variant="danger">Quitar</Button>
+          <Button variant="danger" onClick={() => borrarPelicula(pelicula)}
+        > Quitar</Button>
         </div>
       </Card.Body>
     </Card>

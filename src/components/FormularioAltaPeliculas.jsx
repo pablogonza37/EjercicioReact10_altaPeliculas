@@ -28,6 +28,17 @@ const FormularioAltaPeliculas = () => {
     }));
   };
 
+  const borrarPelicula = (nombrePelicula) => {
+    const indicePelicula = peliculas.findIndex((pelicula) => pelicula === nombrePelicula);
+    if (indicePelicula !== -1) {
+      const nuevasPeliculas = [
+        ...peliculas.slice(0, indicePelicula),
+        ...peliculas.slice(indicePelicula + 1),
+      ];
+      setPeliculas(nuevasPeliculas);
+    }
+  };
+
   return (
     <section>
       <Form className="text-white p-4 form my-4" onSubmit={handleSubmit}>
@@ -76,7 +87,7 @@ const FormularioAltaPeliculas = () => {
           </Button>
         </div>
       </Form>
-      <ListaPeliculas peliculas={peliculas}></ListaPeliculas>
+      <ListaPeliculas peliculas={peliculas} borrarPelicula={borrarPelicula}></ListaPeliculas>
     </section>
   );
 };

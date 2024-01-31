@@ -2,7 +2,7 @@ import { Row, Col } from "react-bootstrap";
 import PeliculaGuardada from "./PeliculaGuardada";
 import { useState, useEffect } from "react";
 
-const ListaPeliculas = ({ peliculas }) => {
+const ListaPeliculas = ({ peliculas, borrarPelicula }) => {
   const [segundoTitulo, setSegundoTitulo] = useState("");
 
   const cambiarTitulo = () => {
@@ -24,7 +24,7 @@ const ListaPeliculas = ({ peliculas }) => {
       {
         peliculas.map((pelicula, posicion) => (
           <Col md={4} className="mb-4" key={posicion}>
-            <PeliculaGuardada pelicula={pelicula}></PeliculaGuardada>
+            <PeliculaGuardada pelicula={pelicula} borrarPelicula={borrarPelicula}></PeliculaGuardada>
           </Col>
         ))}
       </Row>
