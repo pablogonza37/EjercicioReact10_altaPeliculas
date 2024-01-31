@@ -1,10 +1,10 @@
 import { Card, Button } from "react-bootstrap";
-import ListGroup from "react-bootstrap/ListGroup";
+import Imagen from "../assets/imagen.webp";
 
 const PeliculaGuardada = ({ pelicula, borrarPelicula }) => {
   return (
     <Card className="shadow-lg p-3 mb-5 text-bg-dark rounded">
-      <Card.Img variant="top" src="./src/asset/imagen_pelicula.webp" />
+      <img src={Imagen} alt="" className="card-img-top" />
       <Card.Body>
         <Card.Title>{pelicula.nombre}</Card.Title>
         <Card.Text className="shadow p-2 rounded descripcion">
