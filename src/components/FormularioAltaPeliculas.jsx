@@ -1,7 +1,7 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import ListaPeliculas from "./ListaPeliculas";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const FormularioAltaPeliculas = () => {
   const [pelicula, setPelicula] = useState({
@@ -10,7 +10,10 @@ const FormularioAltaPeliculas = () => {
     genero: "",
   });
 
-  const [peliculas, setPeliculas] = useState([]);
+  const peliculasLocalStorage =
+    JSON.parse(localStorage.getItem("peliculasKey")) || [];
+
+  const [peliculas, setPeliculas] = useState(peliculasLocalStorage);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +22,10 @@ const FormularioAltaPeliculas = () => {
       descripcion: "",
       genero: "" });
   };
+
+  useEffect(() => {
+    localStorage.setItem("peliculasKey", JSON.stringify(peliculas));
+  }, [peliculas]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
