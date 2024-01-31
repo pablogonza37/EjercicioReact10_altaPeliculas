@@ -1,5 +1,5 @@
 import { Card, Button } from "react-bootstrap";
-import Imagen from "../assets/imagen.webp";
+import Imagen from "../assets/imagen_pelicula.webp";
 
 const PeliculaGuardada = ({ pelicula, borrarPelicula }) => {
   return (
