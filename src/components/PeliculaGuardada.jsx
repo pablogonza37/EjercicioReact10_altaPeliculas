@@ -1,15 +1,18 @@
 import { Card, Button } from "react-bootstrap";
+import ListGroup from 'react-bootstrap/ListGroup';
 
 
-const PeliculaGuardada = () => {
+const PeliculaGuardada = ( { pelicula }) => {
   return (
-    <Card className="text-bg-dark">
+    <Card className="shadow-lg p-3 mb-5 text-bg-dark rounded">
       <Card.Img variant="top" src="./src/asset/imagen_pelicula.webp"/>
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <Card.Title>{pelicula.nombre}</Card.Title>
+        <Card.Text  className="shadow p-2 rounded descripcion">
+          Descripcion: {pelicula.descripcion}
+        </Card.Text>
+        <Card.Text className="shadow p-2 rounded">
+          Genero: {pelicula.genero}
         </Card.Text>
         <div className="text-end">
           <Button variant="danger">Quitar</Button>

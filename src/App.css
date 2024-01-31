@@ -33,7 +33,11 @@ body {
   
 	height: 200px;
 	object-fit: cover;
-	border: 3px solid #ff9daa;
+
+}
+.descripcion{
+  height: 100px;
+  overflow: auto;
 }
 
 @media (min-width: 1200px) {
