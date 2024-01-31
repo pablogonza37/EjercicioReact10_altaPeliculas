@@ -21,10 +21,12 @@ const ListaPeliculas = ({ peliculas, borrarPelicula }) => {
     <div className="my-5">
       <h6 className="h2 display-5 text-white my-4 py-3">{segundoTitulo}</h6>
       <Row className="d-flex justify-content-center">
-      {
-        peliculas.map((pelicula, posicion) => (
+        {peliculas.map((pelicula, posicion) => (
           <Col md={4} className="mb-4" key={posicion}>
-            <PeliculaGuardada pelicula={pelicula} borrarPelicula={borrarPelicula}></PeliculaGuardada>
+            <PeliculaGuardada
+              pelicula={pelicula}
+              borrarPelicula={borrarPelicula}
+            ></PeliculaGuardada>
           </Col>
         ))}
       </Row>

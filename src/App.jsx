@@ -4,7 +4,6 @@ import Container from "react-bootstrap/Container";
 import Footer from "./components/Footer";
 import FormularioAltaPeliculas from "./components/FormularioAltaPeliculas";
 
-
 function App() {
   return (
     <>
@@ -12,7 +11,7 @@ function App() {
         Alta de peliculas
       </h1>
       <Container className="mainPage">
-      <FormularioAltaPeliculas></FormularioAltaPeliculas>
+        <FormularioAltaPeliculas></FormularioAltaPeliculas>
       </Container>
       <Footer></Footer>
     </>

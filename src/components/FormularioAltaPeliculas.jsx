@@ -17,10 +17,13 @@ const FormularioAltaPeliculas = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setPeliculas((prevState) => [...prevState, pelicula]);
-      setPelicula({ nombre: "",
-      descripcion: "",
-      genero: "" });
+    if (pelicula.genero === "") {
+      alert("ingrese genero");
+      return;
+    } else {
+      setPeliculas((prevState) => [...prevState, pelicula]);
+      setPelicula({ nombre: "", descripcion: "", genero: "" });
+    }
   };
 
   useEffect(() => {
@@ -36,7 +39,9 @@ const FormularioAltaPeliculas = () => {
   };
 
   const borrarPelicula = (nombrePelicula) => {
-    const indicePelicula = peliculas.findIndex((pelicula) => pelicula === nombrePelicula);
+    const indicePelicula = peliculas.findIndex(
+      (pelicula) => pelicula === nombrePelicula
+    );
     if (indicePelicula !== -1) {
       const nuevasPeliculas = [
         ...peliculas.slice(0, indicePelicula),
@@ -57,6 +62,9 @@ const FormularioAltaPeliculas = () => {
             name="nombre"
             value={pelicula.nombre}
             onChange={handleChange}
+            minLength={3}
+            maxLength={40}
+            required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
@@ -68,6 +76,9 @@ const FormularioAltaPeliculas = () => {
             name="descripcion"
             value={pelicula.descripcion}
             onChange={handleChange}
+            minLength={3}
+            maxLength={500}
+            required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
@@ -77,6 +88,7 @@ const FormularioAltaPeliculas = () => {
             name="genero"
             value={pelicula.genero}
             onChange={handleChange}
+            required
           >
             <option>Seleccione un genero</option>
             <option value="Comedia">Comedia</option>
@@ -94,7 +106,10 @@ const FormularioAltaPeliculas = () => {
           </Button>
         </div>
       </Form>
-      <ListaPeliculas peliculas={peliculas} borrarPelicula={borrarPelicula}></ListaPeliculas>
+      <ListaPeliculas
+        peliculas={peliculas}
+        borrarPelicula={borrarPelicula}
+      ></ListaPeliculas>
     </section>
   );
 };
