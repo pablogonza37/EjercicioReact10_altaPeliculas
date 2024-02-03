@@ -20,7 +20,7 @@ Se muestra una card con la información de la película ingresada.
 
 ## Instalación
 
-- Clona este repositorio en tu máquina local usando el siguiente comando: git clone <URL_DEL_REPOSITORIO>
+- Clona este repositorio en tu máquina local usando el siguiente comando: git clone https://github.com/pablogonza37/EjercicioReact10_altaPeliculas.git
 - Navega al directorio del proyecto: cd nombre_del_directorio
 - Instala las dependencias utilizando npm o yarn: npm install o yarn install
 
