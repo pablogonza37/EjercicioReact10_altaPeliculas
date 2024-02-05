@@ -4,6 +4,10 @@
 
 Este proyecto consiste en una aplicación web desarrollada con React que permite dar de alta películas mediante un formulario. Una vez ingresados los datos de la película, esta se guarda en el localStorage del navegador y se muestra en una card.
 
+## Demo
+
+Puedes ver una demostración del proyecto en vivo en [Netlify](https://magenta-dasik-5f1c85.netlify.app/).
+
 ## Funcionalidades
 
 - Formulario de alta de películas con los siguientes campos:
