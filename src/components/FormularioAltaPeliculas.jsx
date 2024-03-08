@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 const FormularioAltaPeliculas = () => {
   const [pelicula, setPelicula] = useState({
     nombre: "",
+    imagen: "",
     descripcion: "",
     genero: "",
   });
@@ -22,7 +23,7 @@ const FormularioAltaPeliculas = () => {
       return;
     } else {
       setPeliculas((prevState) => [...prevState, pelicula]);
-      setPelicula({ nombre: "", descripcion: "", genero: "" });
+      setPelicula({ nombre: "", imagen: "", descripcion: "", genero: "" });
     }
   };
 
@@ -67,6 +68,21 @@ const FormularioAltaPeliculas = () => {
             required
           />
         </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formImagen">
+          <Form.Label>Imagen URL:</Form.Label>
+          <Form.Control
+            type="url"
+            name="imagen"
+            value={pelicula.imagen}
+            onChange={handleChange}
+            placeholder="Ej: https://pics.filmaffinity.com/Joker-790658206-mmed.jpg"
+            pattern="https?://.+\.(jpg|jpeg|png|gif)" title="Debe ser una URL válida de una imagen (jpg, jpeg, png, gif)"
+            required
+          />
+          
+        </Form.Group>
+
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
           <Form.Label>Descripcion:</Form.Label>
           <Form.Control

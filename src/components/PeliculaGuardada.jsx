@@ -4,7 +4,7 @@ import Imagen from "../assets/imagen_pelicula.webp";
 const PeliculaGuardada = ({ pelicula, borrarPelicula }) => {
   return (
     <Card className="shadow-lg p-3 mb-5 text-bg-dark rounded">
-      <img src={Imagen} alt="" className="card-img-top" />
+      <img src={pelicula.imagen} alt="" className="card-img-top" />
       <Card.Body>
         <Card.Title>{pelicula.nombre}</Card.Title>
         <Card.Text className="shadow p-2 rounded descripcion">
